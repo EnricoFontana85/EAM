@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %> <%- include('./partials/sidebar.ejs')
+    %> <%- include("./partials/internalNav.ejs") %>
+    <p class="chart_layout">Week <%= weekData.Week %></p>
+    <div class="chart">
+      <% for (var i = 1; i < Object.keys(weekData).length; i++) { let x =
+      100*Object.values(weekData)[i]/weekData.Total %>
+      <div
+        class="chart_layout bar <%= Object.keys(weekData)[i].toLowerCase().substring(0, 3) %>"
+        style="height: <%= x %>%"
+      >
+        <%= Object.keys(weekData)[i] %>: <%= Object.values(weekData)[i] %>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

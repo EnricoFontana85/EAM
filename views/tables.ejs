@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <%- include("./partials/nav.ejs") %> <%- include('./partials/sidebar.ejs')
+    %> <%- include("./partials/internalNav.ejs") %> <% for (let i = 0; i <
+    jsonData.length; i++) { %>
+    <table class="radio content" id="table<%= i %>">
+      <% const jsonDataList = jsonData[i]; %> <% if (jsonDataList.length > 0) {
+      %>
+      <tr>
+        <% Object.keys(jsonDataList[0]).forEach(key => { %>
+        <th><%= key %></th>
+        <% }) %>
+      </tr>
+      <% jsonDataList.forEach(row => { %>
+      <tr>
+        <% Object.values(row).forEach(value => { %>
+        <td><%= value %></td>
+        <% }) %>
+      </tr>
+
+      <% }) %> <% } else { %>
+      <tr>
+        <td colspan="100%">DB is empty...</td>
+      </tr>
+      <% } %>
+    </table>
+    <p></p>
+    <% } %>
+  </body>
+</html>

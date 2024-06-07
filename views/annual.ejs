@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
 
+  <body>
+    <%- include("./partials/nav.ejs") %> <%- include('./partials/sidebar.ejs')
+    %> <%- include("./partials/internalNav.ejs") %>
+
+    <p class="chart_layout">Week <%= currentFolder.substring(2,4) %></p>
+
+    <!-- Legend Data Table -->
+    <div class="chart-annual">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th></th>
+            <% let x = 0; for (var i = 0; i < 52; i++) { if (annualData[i] !==
+            undefined) { %>
+            <th>
+              <div class="flex-container">
+                <% x = 100 * Object.values(annualData)[i].Assigned / myMaxUsed;
+                %>
+                <div
+                  class="chart_layout bar ass"
+                  style="width: 6px; height: <%= x * 5 %>px; margin-right: 2px"
+                ></div>
+
+                <% x = 100 * Object.values(annualData)[i].Used / myMaxUsed; %>
+                <div
+                  class="chart_layout bar use"
+                  style="width: 6px; height: <%= x * 5 %>px; margin-right: 2px"
+                ></div>
+
+                <% x = 100 * Object.values(annualData)[i]["Non Compliant"] /
+                myMaxUsed; %>
+                <div
+                  class="chart_layout bar non"
+                  style="width: 6px; height: <%= x * 5 %>px; margin-right: 2px"
+                ></div>
+              </div>
+            </th>
+            <% } else { %>
+            <th>
+              <div class="flex-container">
+                <div
+                  class="chart_layout bar ass"
+                  style="width: 6px; height: 0%; margin-right: 2px"
+                ></div>
+                <div
+                  class="chart_layout bar use"
+                  style="width: 6px; height: 0%; margin-right: 2px"
+                ></div>
+                <div
+                  class="chart_layout bar non"
+                  style="width: 6px; height: 0%; margin-right: 2px"
+                ></div>
+              </div>
+            </th>
+            <% }} %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Week</th>
+            <% for (var i = 0; i < 52; i++) { %>
+            <td><%= i + 1 %></td>
+            <% } %>
+          </tr>
+          <tr>
+            <th>Assigned</th>
+            <% for (var i = 0; i < 52; i++) { %>
+            <td><%= annualData[i] ? annualData[i].Assigned : '-' %></td>
+            <% } %>
+          </tr>
+          <tr>
+            <th>Used</th>
+            <% for (var i = 0; i < 52; i++) { %>
+            <td><%= annualData[i] ? annualData[i].Used : '-' %></td>
+            <% } %>
+          </tr>
+          <tr>
+            <th>Non Compliant</th>
+            <% for (var i = 0; i < 52; i++) { %>
+            <td><%= annualData[i] ? annualData[i]["Non Compliant"] : '-' %></td>
+            <% } %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
