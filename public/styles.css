@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+/*Nav e Header*/
+.nav {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+
+  z-index: 100;
+}
+
+.left-section-nav {
+  display: flex;
+  align-items: center;
+}
+
+.right-section-nav {
+  flex: 1;
+  margin-left: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 130px;
+  margin-left: 10px;
+}
+
+/*NAV buttons*/
+.container {
+  margin-right: 10px;
+}
+
+.nav-btn {
+  background-color: #377b3a;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+}
+
+.dropdown-container {
+  display: none;
+  position: absolute;
+  background-color: #ddd;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-container a {
+  color: black;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-container a:hover {
+  background-color: #b7b7b7;
+}
+
+.container:hover .dropdown-container {
+  display: block;
+}
+
+/*Header*/
+.header {
+  background-color: rgb(102, 29, 29);
+  padding-top: 15px;
+
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 55px;
+  left: 180px;
+  right: 0;
+
+  background-color: white;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+
+  z-index: 95;
+}
+
+.header-btn {
+  background-color: #064eb9;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+}
+
+.label {
+  margin-left: 20px;
+}
+
+/*Sidebar*/
+.sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 55px;
+  background-color: lightgrey;
+  width: 180px;
+  z-index: 99;
+}
+
+.sidebar-link {
+  background-color: rgb(188, 188, 188);
+  height: 70px;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.sidebar-link:hover {
+  background-color: rgb(168, 168, 168);
+}
+
+.sidebar-link img {
+  height: 24px;
+  margin-bottom: 4px;
+}
+
+.sidebar-link div {
+  font-family: Roboto, Arial;
+  font-size: 16px;
+}
+
+/*Main*/
+body {
+  margin-left: 180px;
+  margin-top: 140px;
+  padding: 0px 20px;
+  font-family: "Noto Serif", serif;
+  background-color: lightgray;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #222;
+}
+
+/*Table*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+/*Chart*/
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 90%;
+  height: 70vh;
+  border: 1px solid #ccc;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.chart-annual {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+  height: 75vh;
+  border: 1px solid #ccc;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.bar {
+  width: 18%;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.ass {
+  background-color: #1f4e79;
+}
+.use {
+  background-color: #9d8022;
+}
+.com {
+  background-color: #5f9747;
+}
+.non {
+  background-color: #cd3f12;
+}
+.tot {
+  background-color: #565656;
+}
+
+.chart_layout {
+  font-size: 20px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-end;
+  height: 500px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
